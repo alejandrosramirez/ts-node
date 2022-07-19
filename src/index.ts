@@ -1,6 +1,9 @@
-import { getPokemon } from "./generics/get-pokemon";
+import { Pokemon } from "./decorators/pokemon-class";
 
-getPokemon(6)
-	.then((pokemon) => console.log(pokemon.sprites.front_shiny))
-	.catch((error) => console.error(error))
-	.finally(() => console.log("Fin de getPokemon"));
+const charizard = new Pokemon("Charizard");
+
+// (Pokemon.prototype as any).customName = "Pikachu";
+
+// charizard.savePokemonToDb(6);
+charizard.publicApi = "https://www.google.com";
+console.log(charizard);
